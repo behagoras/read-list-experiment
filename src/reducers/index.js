@@ -4,7 +4,13 @@
 function reducer(state = [], action) {
   switch (action.type) {
     case 'FILTER':
-      return { ...state, filtered: state.original.filter((article) => article.name.toUpperCase().includes(action.filter.toUpperCase())) };
+      return { ...state,
+        filtered: state.original.filter(
+          (article) => `${article.name}${article.price}` // Filter by name and price
+            .toUpperCase()
+            .includes(action.filter.toUpperCase()),
+        ).sort((a, b) => (a.name < b.name ? -1 : 1)).slice(), // Sort descending
+      };
     case 'SORT-ASCENDING':
       return { ...state, filtered: state.filtered.sort((a, b) => (a.name > b.name ? -1 : 1)).slice() };
     case 'SORT-DESCENDING':
@@ -12,7 +18,6 @@ function reducer(state = [], action) {
     default:
       return state;
   }
-
 }
 
 export default reducer;
