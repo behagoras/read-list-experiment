@@ -6,7 +6,6 @@ const Filter = (props) => {
     event.preventDefault();
     const $search = document.getElementById('search');
     const { value } = $search;
-    console.log(value);
     props.dispatch({
       type: 'FILTER',
       filter: value,

@@ -1,3 +1,4 @@
+/* eslint-disable no-case-declarations */
 // import actions from '../actions';
 
 function reducer(state = [], action) {
@@ -5,10 +6,9 @@ function reducer(state = [], action) {
     case 'FILTER':
       return { ...state, filtered: state.original.filter((article) => article.name.toUpperCase().includes(action.filter.toUpperCase())) };
     case 'SORT-ASCENDING':
-      return { ...state, filtered: state.filtered.sort((a, b) => (a.name > b.name ? -1 : 1)) };
+      return { ...state, filtered: state.filtered.sort((a, b) => (a.name > b.name ? -1 : 1)).slice() };
     case 'SORT-DESCENDING':
-      const filtered = state.filtered.sort((a, b) => (a.name < b.name ? -1 : 1));
-      return { ...state, filtered };
+      return { ...state, filtered: state.filtered.sort((a, b) => (a.name < b.name ? -1 : 1)).slice() };
     default:
       return state;
   }

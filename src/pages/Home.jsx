@@ -16,8 +16,6 @@ const Home = (props) => {
       type: 'SORT-DESCENDING',
     });
   }, []);
-  console.log('filtered', props.filtered);
-  console.log(props.filtered);
   return (
     <Container>
       <Header><Filter /></Header>
