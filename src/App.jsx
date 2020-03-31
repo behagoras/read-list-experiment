@@ -1,4 +1,6 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 import {
   BrowserRouter as Router,
   Switch,
@@ -6,32 +8,42 @@ import {
   Link,
 } from 'react-router-dom';
 
+// Routes
 import Home from './pages/Home';
+
+// Redux
+import mockStore from './mocks/store.json';
+import reducers from './reducers';
+
+// Initialize store
+const store = createStore(reducers, { original: mockStore, filtered: mockStore });
 
 export default function App() {
   return (
-    <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            {/* <li>
+    <Provider store={store}>
+      <Router>
+        <div>
+          <nav>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              {/* <li>
               <Link to="/cards">cards</Link>
             </li> */}
 
-          </ul>
-        </nav>
+            </ul>
+          </nav>
 
-        {/* A <Switch> looks through its children <Route>s and
+          {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+          <Switch>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
+    </Provider>
   );
 }

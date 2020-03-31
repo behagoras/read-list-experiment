@@ -1,21 +1,37 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
 
 import ListOfArticles from '../components/ListOfArticles';
-import store from '../mocks/store.json';
+import Filter from '../components/Filter';
 
 const Header = styled.div``;
 const Container = styled.div``;
 const Footer = styled.div``;
 const Title = styled.h2``;
 
-const Home = () => (
-  <Container>
-    <Header>Header</Header>
-    <Title>Title</Title>
-    <ListOfArticles store={store} />
-    <Footer>Footer</Footer>
-  </Container>
-);
+const Home = (props) => {
+  useEffect(() => {
+    props.dispatch({
+      type: 'SORT-DESCENDING',
+    });
+  }, []);
+  console.log('filtered', props.filtered);
+  console.log(props.filtered);
+  return (
+    <Container>
+      <Header><Filter /></Header>
+      <Title>Title</Title>
+      <ListOfArticles store={props.filtered} />
+      <Footer>Footer</Footer>
+    </Container>
+  );
+};
 
-export default Home;
+const mapStateToProps = ({ filtered }) => {
+  return {
+    filtered,
+  };
+};
+
+export default connect(mapStateToProps)(Home);
