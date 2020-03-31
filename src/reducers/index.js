@@ -7,7 +7,8 @@ function reducer(state = [], action) {
     case 'SORT-ASCENDING':
       return { ...state, filtered: state.filtered.sort((a, b) => (a.name > b.name ? -1 : 1)) };
     case 'SORT-DESCENDING':
-      return { original: state.original, filtered: state.filtered.sort((a, b) => (a.name < b.name ? -1 : 1)) };
+      const filtered = state.filtered.sort((a, b) => (a.name < b.name ? -1 : 1));
+      return { ...state, filtered };
     default:
       return state;
   }
