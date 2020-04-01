@@ -15,8 +15,8 @@ const AppLayout = (props) => {
       props.dispatch({
         type: 'SET_STATE',
         payload: {
-          original: data,
-          filtered: data,
+          original: data.data,
+          filtered: data.data,
         },
       });
     };

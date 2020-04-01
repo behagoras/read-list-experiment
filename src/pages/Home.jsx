@@ -13,7 +13,7 @@ const Title = styled.h2``;
 const Home = (props) => {
   useEffect(() => {
     props.dispatch({
-      type: 'SORT_DESCENDING',
+      type: 'SORT-DESCENDING',
     });
   }, []);
   return (

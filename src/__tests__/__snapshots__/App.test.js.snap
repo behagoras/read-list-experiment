@@ -29,7 +29,9 @@ exports[`<App /> Should match Snapshot and render an app 1`] = `
         <Route
           path="/"
         >
-          <Connect(Home) />
+          <Connect(AppLayout)>
+            <Connect(Home) />
+          </Connect(AppLayout)>
         </Route>
       </Switch>
     </div>

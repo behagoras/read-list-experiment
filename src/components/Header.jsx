@@ -1,9 +1,10 @@
 import React from 'react';
+import Filters from './Filter';
 
 const Header = () => {
   return (
     <div>
-      Header
+      <Filters />
     </div>
   );
 };
