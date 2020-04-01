@@ -1,6 +1,10 @@
 import { createGlobalStyle, css } from 'styled-components';
 
-const variables = css``;
+const variables = css`
+  html{
+    font-family: 'Montserrat', sans-serif;
+  }
+`;
 const modernize = css`
   html {
     line-height: 1.15; /* 1 */
@@ -183,8 +187,8 @@ const modernize = css`
 `;
 
 const globalStyles = createGlobalStyle`
-  ${variables};
   ${modernize};
+  ${variables};
 `;
 
 export default globalStyles;

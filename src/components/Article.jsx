@@ -37,7 +37,7 @@ const Container = styled.div`
 `;
 
 const Info = styled.div`
-  background-color:#F9EFF2;
+  background-color:#FAFAFA;
   position:relative;
   padding:16px 24px;
   transform:${(props) => (props.hover ? 'scale(1.3)' : 'scale(1)')};

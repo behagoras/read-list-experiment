@@ -3,12 +3,14 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 
 import ListOfArticles from '../components/ListOfArticles';
-import Filter from '../components/Filter';
 
-const Header = styled.div``;
 const Container = styled.div``;
-const Footer = styled.div``;
-const Title = styled.h2``;
+
+const Title = styled.h2`
+  margin:50px;
+  color: #62D8AF;
+  font-size:40px;
+`;
 
 const Home = (props) => {
   useEffect(() => {
@@ -18,10 +20,8 @@ const Home = (props) => {
   }, []);
   return (
     <Container>
-      <Header><Filter /></Header>
-      <Title>Title</Title>
+      <Title>Articles to buy</Title>
       <ListOfArticles store={props.filtered} />
-      <Footer>Footer</Footer>
     </Container>
   );
 };

@@ -16,31 +16,23 @@ import Home from './pages/Home';
 // Redux
 import mockStore from './mocks/store.json';
 import reducers from './reducers';
+import GlobalStyles from './styles/globalStyles';
 
 // Initialize store
-const store = createStore(reducers, { original: mockStore, filtered: mockStore });
+const store = createStore(reducers, { original: mockStore, filtered: mockStore });;
 
 const App = (props) => {
   return (
     <Provider store={store}>
       <Router>
-        <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Homes</Link>
-              </li>
-            </ul>
-          </nav>
-
-          <Switch>
-            <Route path="/">
-              <Layout>
-                <Home />
-              </Layout>
-            </Route>
-          </Switch>
-        </div>
+        <GlobalStyles />
+        <Switch>
+          <Route path="/">
+            <Layout>
+              <Home />
+            </Layout>
+          </Route>
+        </Switch>
       </Router>
     </Provider>
   );

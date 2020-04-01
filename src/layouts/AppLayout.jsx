@@ -5,7 +5,9 @@ import getData from '../utils/getData';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-const Main = styled.main``;
+const Main = styled.main`
+  margin-bottom:150px;
+`;
 
 const AppLayout = (props) => {
   useEffect(() => {
