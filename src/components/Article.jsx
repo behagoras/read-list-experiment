@@ -56,7 +56,7 @@ const Price = styled.p`
   }
 `;
 
-const Article = ({ name = '', price = '', image = '' }) => {
+const Article = ({ name = '', price = '', image = '', _id = '' }) => {
   const [hover, setHover] = useState(false);
   const handleHover = () => {
     setHover(true);

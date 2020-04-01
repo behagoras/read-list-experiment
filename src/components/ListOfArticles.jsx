@@ -14,7 +14,7 @@ const Container = styled.div`
 const ListOfArticles = ({ store = [] }) => (
   <Container>
     {
-      store.map((article) => <Article {...article} />)
+      store.map((article) => <Article key={article._id} {...article} />)
     }
   </Container>
 );
