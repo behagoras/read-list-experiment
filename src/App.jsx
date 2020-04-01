@@ -8,6 +8,8 @@ import {
   Link,
 } from 'react-router-dom';
 
+import Layout from './layouts/AppLayout';
+
 // Routes
 import Home from './pages/Home';
 
@@ -18,7 +20,7 @@ import reducers from './reducers';
 // Initialize store
 const store = createStore(reducers, { original: mockStore, filtered: mockStore });
 
-export default function App() {
+const App = (props) => {
   return (
     <Provider store={store}>
       <Router>
@@ -28,22 +30,20 @@ export default function App() {
               <li>
                 <Link to="/">Homes</Link>
               </li>
-              {/* <li>
-              <Link to="/cards">cards</Link>
-            </li> */}
-
             </ul>
           </nav>
 
-          {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
           <Switch>
             <Route path="/">
-              <Home />
+              <Layout>
+                <Home />
+              </Layout>
             </Route>
           </Switch>
         </div>
       </Router>
     </Provider>
   );
-}
+};
+
+export default App;

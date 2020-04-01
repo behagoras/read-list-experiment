@@ -23,13 +23,13 @@ const Filter = (props) => {
   const handleAscending = (event) => {
     event.preventDefault();
     props.dispatch({
-      type: 'SORT-ASCENDING',
+      type: 'SORT_ASCENDING',
     });
   };
   const handleDescending = (event) => {
     event.preventDefault();
     props.dispatch({
-      type: 'SORT-DESCENDING',
+      type: 'SORT_DESCENDING',
     });
 
   };

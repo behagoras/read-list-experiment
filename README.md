@@ -33,11 +33,21 @@ Create a small react app for the following:
 
 - If possible, push it to a public repository so we can run it locally.
 
-## Available Scripts
+## How to run It
 
-In the project directory, you can run:
+### Start the server
 
-### `yarn start`
+In the server directory, start the server:
+
+It will run into your localhost in http://localhost:3001
+
+#### 1. `cd server`
+
+#### 2. `yarn start`
+
+### Run the project
+
+#### `yarn start`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -45,12 +55,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-### `yarn test`
+#### `yarn test`
 
 Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+#### `yarn build`
 
 Builds the app for production to the `build` folder.<br />
 It correctly bundles React in production mode and optimizes the build for the best performance.
