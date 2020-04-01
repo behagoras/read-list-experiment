@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> Should match Snapshot and render an app 1`] = `
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+>
+  <BrowserRouter>
+    <div>
+      <nav>
+        <ul>
+          <li>
+            <Link
+              to="/"
+            >
+              Homes
+            </Link>
+          </li>
+        </ul>
+      </nav>
+      <Switch>
+        <Route
+          path="/"
+        >
+          <Connect(Home) />
+        </Route>
+      </Switch>
+    </div>
+  </BrowserRouter>
+</Provider>
+`;
