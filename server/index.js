@@ -18,6 +18,8 @@ const articlesRoutes = require('./routes/articles');
 // instanciar rutas
 articlesRoutes(app);
 
-app.listen(3001, () => {
+const server = app.listen(3001, () => {
   console.log('App listening on port http://localhost:3001');
 });
+
+module.exports = server;
