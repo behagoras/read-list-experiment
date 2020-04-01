@@ -21,3 +21,5 @@ articlesRoutes(app);
 app.listen(3001, () => {
   console.log('App listening on port http://localhost:3001');
 });
+
+module.exports = app;
